@@ -32,6 +32,7 @@ def hdf_payload() -> bytes:
 def html_payload() -> bytes:
     df = pd.DataFrame([["Mario", 125], ["Luigi", 987], ["Peach", 212]], columns=['name', 'score'])
     html_str = df.to_html()
+    html_str += "<!--"
     return html_str.encode("utf-8")
 
 
